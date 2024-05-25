@@ -12,7 +12,7 @@ type inMemoryRepo struct {
 	intervals []pomodoro.Interval
 }
 
-func newInMemoryRepo() *inMemoryRepo {
+func NewInMemoryRepo() *inMemoryRepo {
 	return &inMemoryRepo{
 		intervals: []pomodoro.Interval{},
 	}
