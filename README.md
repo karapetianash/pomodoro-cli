@@ -7,7 +7,7 @@ breaks are typically 5 and 15 minutes.
 
 ### Interactive Pomodoro Timer Screen:
 
-![Pomodoro Screen](C:\Users\Ashot\pragprog.com\rggo\interactiveTools\pomo\pomoScreen.PNG "Pomodoro Screen")
+![Pomodoro Screen](https://github.com/karapetianash/pomodoro-cli/blob/main/pomoScreen.PNG "Pomodoro Screen")
 
 ### Usage:
 `pomo [flags]`
