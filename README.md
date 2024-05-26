@@ -4,3 +4,19 @@ on tasks by defining a short time interval to concentrate on it, called
 Pomodoro, followed by short and long breaks to allow you to rest and
 reprioritize tasks. In general, a Pomodoro interval lasts 25 minutes while
 breaks are typically 5 and 15 minutes.
+
+### Interactive Pomodoro Timer Screen:
+
+![Pomodoro Screen](C:\Users\Ashot\pragprog.com\rggo\interactiveTools\pomo\pomoScreen.PNG "Pomodoro Screen")
+
+### Usage:
+`pomo [flags]`
+
+### Flags:
+
+        --config string    config file (default is $HOME/.pomo.yaml)
+
+    -h, --help             help for pomo
+    -l, --long duration    Long break duration (default 15m0s)
+    -p, --pomo duration    Pomodoro duration (default 25m0s)
+    -s, --short duration   Short break duration (default 5m0s)
