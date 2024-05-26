@@ -18,6 +18,7 @@ func NewInMemoryRepo() *inMemoryRepo {
 	}
 }
 
+// Create function adds new interval to the list, returns its ID and error
 func (r *inMemoryRepo) Create(i pomodoro.Interval) (int64, error) {
 	r.Lock()
 	defer r.Unlock()
@@ -29,6 +30,7 @@ func (r *inMemoryRepo) Create(i pomodoro.Interval) (int64, error) {
 	return i.ID, nil
 }
 
+// Update function updates interval item
 func (r *inMemoryRepo) Update(i pomodoro.Interval) error {
 	r.Lock()
 	defer r.Unlock()
@@ -41,6 +43,7 @@ func (r *inMemoryRepo) Update(i pomodoro.Interval) error {
 	return nil
 }
 
+// ByID function returns interval from the list by its ID
 func (r *inMemoryRepo) ByID(id int64) (pomodoro.Interval, error) {
 	r.RLock()
 	defer r.RUnlock()
@@ -54,6 +57,7 @@ func (r *inMemoryRepo) ByID(id int64) (pomodoro.Interval, error) {
 	return i, nil
 }
 
+// Last function returns the last interval from the list
 func (r *inMemoryRepo) Last() (pomodoro.Interval, error) {
 	r.RLock()
 	defer r.RUnlock()
@@ -66,6 +70,7 @@ func (r *inMemoryRepo) Last() (pomodoro.Interval, error) {
 	return r.intervals[len(r.intervals)-1], nil
 }
 
+// Breaks function returns <=n intervals with category not CategoryPomodoro
 func (r *inMemoryRepo) Breaks(n int) ([]pomodoro.Interval, error) {
 	r.RLock()
 	defer r.RUnlock()

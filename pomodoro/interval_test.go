@@ -103,7 +103,7 @@ func TestGetInterval(t *testing.T) {
 				t.Errorf("Expected no error, got %q.\n", err)
 			}
 			noop := func(pomodoro.Interval) {}
-			if err := res.Start(context.Background(), config,
+			if err = res.Start(context.Background(), config,
 				noop, noop, noop); err != nil {
 				t.Fatal(err)
 			}
@@ -156,6 +156,8 @@ func TestPause(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
 			ctx, cancel := context.WithCancel(context.Background())
+			defer cancel()
+
 			i, err := pomodoro.GetInterval(config)
 			if err != nil {
 				t.Fatal(err)
@@ -165,12 +167,12 @@ func TestPause(t *testing.T) {
 				t.Errorf("End callback should not be executed")
 			}
 			periodic := func(i pomodoro.Interval) {
-				if err := i.Pause(config); err != nil {
+				if err = i.Pause(config); err != nil {
 					t.Fatal(err)
 				}
 			}
 			if tc.start {
-				if err := i.Start(ctx, config, start, periodic, end); err != nil {
+				if err = i.Start(ctx, config, start, periodic, end); err != nil {
 					t.Fatal(err)
 				}
 			}
@@ -199,7 +201,6 @@ func TestPause(t *testing.T) {
 				t.Errorf("Expected duration %q, got %q.\n",
 					tc.expDuration, i.ActualDuration)
 			}
-			cancel()
 		})
 	}
 }
@@ -256,7 +257,7 @@ func TestStart(t *testing.T) {
 					cancel()
 				}
 			}
-			if err := i.Start(ctx, config, start, periodic, end); err != nil {
+			if err = i.Start(ctx, config, start, periodic, end); err != nil {
 				t.Fatal(err)
 			}
 			i, err = repo.ByID(i.ID)

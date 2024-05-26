@@ -131,7 +131,7 @@ func tick(ctx context.Context, id int64, config *IntervalConfig, start, periodic
 	for {
 		select {
 		case <-ticker.C:
-			i, err := config.repo.ByID(id)
+			i, err = config.repo.ByID(id)
 			if err != nil {
 				return err
 			}
@@ -139,12 +139,12 @@ func tick(ctx context.Context, id int64, config *IntervalConfig, start, periodic
 				return nil
 			}
 			i.ActualDuration += time.Second
-			if err := config.repo.Update(i); err != nil {
+			if err = config.repo.Update(i); err != nil {
 				return err
 			}
 			periodic(i)
 		case <-expire:
-			i, err := config.repo.ByID(id)
+			i, err = config.repo.ByID(id)
 			if err != nil {
 				return err
 			}
@@ -153,7 +153,7 @@ func tick(ctx context.Context, id int64, config *IntervalConfig, start, periodic
 
 			return config.repo.Update(i)
 		case <-ctx.Done():
-			i, err := config.repo.ByID(id)
+			i, err = config.repo.ByID(id)
 			if err != nil {
 				return err
 			}
