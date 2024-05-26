@@ -4,9 +4,10 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"pomo/pomodoro"
 	"testing"
 	"time"
+
+	"pomo/pomodoro"
 )
 
 func TestNewConfig(t *testing.T) {

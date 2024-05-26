@@ -1,9 +1,10 @@
 package pomodoro_test
 
 import (
+	"testing"
+
 	"pomo/pomodoro"
 	"pomo/pomodoro/repository"
-	"testing"
 )
 
 func getRepo(t *testing.T) (pomodoro.Repository, func()) {
