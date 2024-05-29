@@ -3,9 +3,10 @@
 package cmd
 
 import (
-	"github.com/spf13/viper"
 	"pomo/pomodoro"
 	"pomo/pomodoro/repository"
+
+	"github.com/spf13/viper"
 )
 
 func getRepo() (pomodoro.Repository, error) {

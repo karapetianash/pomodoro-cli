@@ -3,12 +3,12 @@
 package repository
 
 import (
-	// Blank import for sqlite3 driver only
 	"database/sql"
-	_ "github.com/mattn/go-sqlite3"
 	"pomo/pomodoro"
 	"sync"
 	"time"
+
+	_ "github.com/mattn/go-sqlite3"
 )
 
 const (
@@ -146,7 +146,7 @@ ORDER BY id DESC LIMIT ?`
 	data := make([]pomodoro.Interval, 0)
 	for rows.Next() {
 		i := pomodoro.Interval{}
-		err = rows.Scan(&i.ID, &i.PlannedDuration, &i.ActualDuration, &i.Category, &i.State)
+		err = rows.Scan(&i.ID, &i.StartTime, &i.PlannedDuration, &i.ActualDuration, &i.Category, &i.State)
 		if err != nil {
 			return nil, err
 		}
