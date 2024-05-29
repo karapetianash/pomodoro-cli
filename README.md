@@ -16,6 +16,7 @@ breaks are typically 5 and 15 minutes.
 
         --config string    config file (default is $HOME/.pomo.yaml)
 
+    -d, --db string Database file (default "pomo.db")
     -h, --help             help for pomo
     -l, --long duration    Long break duration (default 15m0s)
     -p, --pomo duration    Pomodoro duration (default 25m0s)
