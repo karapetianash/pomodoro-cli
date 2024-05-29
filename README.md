@@ -14,10 +14,10 @@ breaks are typically 5 and 15 minutes.
 
 ### Flags:
 
-        --config string    config file (default is $HOME/.pomo.yaml)
+        --config  string    config file (default is $HOME/.pomo.yaml)
 
-    -d, --db string Database file (default "pomo.db")
-    -h, --help             help for pomo
-    -l, --long duration    Long break duration (default 15m0s)
-    -p, --pomo duration    Pomodoro duration (default 25m0s)
-    -s, --short duration   Short break duration (default 5m0s)
+    -d, --db      string    database file (default "pomo.db")
+    -h, --help              help for pomo
+    -l, --long    duration  long break duration (default 15m0s)
+    -p, --pomo    duration  pomodoro duration (default 25m0s)
+    -s, --short   duration  short break duration (default 5m0s)
