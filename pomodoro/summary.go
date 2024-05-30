@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// DailySummary function returns daily pomodoro and breaks durations
 func DailySummary(day time.Time, config *IntervalConfig) ([]time.Duration, error) {
 	dPomo, err := config.repo.CategorySummary(day, CategoryPomodoro)
 	if err != nil {
@@ -25,6 +26,7 @@ type LineSeries struct {
 	Values []float64
 }
 
+// RangeSummary function returns pomodoro and breaks series of n days range summary
 func RangeSummary(start time.Time, n int, config *IntervalConfig) ([]LineSeries, error) {
 	pomoSeries := LineSeries{
 		Name:   "Pomodoro",

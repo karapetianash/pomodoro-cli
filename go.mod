@@ -3,6 +3,7 @@ module pomo
 go 1.19
 
 require (
+	github.com/mattn/go-sqlite3 v1.14.22
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/mum4k/termdash v0.13.0
 	github.com/spf13/cobra v1.8.0
@@ -15,10 +16,10 @@ require (
 	github.com/gdamore/tcell/v2 v2.0.0 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+	github.com/karapetianash/notifier v0.0.0-20240530173209-06642f727728 // indirect
 	github.com/lucasb-eyer/go-colorful v1.0.3 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mattn/go-runewidth v0.0.9 // indirect
-	github.com/mattn/go-sqlite3 v1.14.22 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.1.0 // indirect
 	github.com/sagikazarmark/locafero v0.4.0 // indirect

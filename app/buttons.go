@@ -3,7 +3,6 @@ package app
 import (
 	"context"
 	"fmt"
-
 	"pomo/pomodoro"
 
 	"github.com/mum4k/termdash/cell"
@@ -28,10 +27,14 @@ func newButtonSet(ctx context.Context, config *pomodoro.IntervalConfig,
 			}
 
 			w.update([]int{}, i.Category, message, "", redrawCh)
+			send_notification(message)
 		}
-		end := func(interval pomodoro.Interval) {
+		end := func(i pomodoro.Interval) {
 			w.update([]int{}, "", "Nothing running...", "", redrawCh)
 			s.update(redrawCh)
+
+			message := fmt.Sprintf("%s finished!", i.Category)
+			send_notification(message)
 		}
 		periodic := func(interval pomodoro.Interval) {
 			w.update(
