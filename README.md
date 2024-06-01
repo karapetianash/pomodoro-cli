@@ -21,3 +21,11 @@ breaks are typically 5 and 15 minutes.
     -l, --long    duration  long break duration (default 15m0s)
     -p, --pomo    duration  pomodoro duration (default 25m0s)
     -s, --short   duration  short break duration (default 5m0s)
+
+### Remarks:
+* The application by default uses the `SQLite` repository which requires you to compile 
+a dependency with `SQLite` libraries written in `C`. So, to compile the program for
+`Windows` you must have installed `C` compiler that supports `Windows`, such as `MINGW`.
+Or you can use `inmemory` repo version.
+* The `termdash` library uses `Unicode` characters. To ensure the GUI displays correctly, 
+make sure your terminal is properly configured to support `Unicode`.
