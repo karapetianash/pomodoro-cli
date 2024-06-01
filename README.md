@@ -25,7 +25,7 @@ breaks are typically 5 and 15 minutes.
 ### Build tags:
     inmemory                enables inmemory repository
     disable_notification    disables notifications
-    containers              smth about containers
+    containers              removes dependency on SQLite and notifications
 
 ### Remarks:
 * The application by default uses the `SQLite` repository which requires you to compile 
@@ -34,3 +34,5 @@ a dependency with `SQLite` libraries written in `C`. So, to compile the program 
 Or you can use `inmemory` repo version.
 * The `termdash` library uses `Unicode` characters. To ensure the GUI displays correctly, 
 make sure your terminal is properly configured to support `Unicode`.
+* In this project, I've implement two different ways to distribute the application: 
+running it in a container and cross-compiling it.
