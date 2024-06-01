@@ -11,6 +11,10 @@ foreach ($os in $OSLIST) {
         $env:GOOS = $os
         $env:GOARCH = $arch
 
-        go build -tags=inmemory -o "releases\$os\$arch\"
+#        for inmemory repo version
+#        go build -tags=inmemory -o "releases\$os\$arch\"
+
+#        for SQLite repo version
+        go build -o "releases\$os\$arch\"
     }
 }
