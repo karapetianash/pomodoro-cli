@@ -10,7 +10,7 @@ breaks are typically 5 and 15 minutes.
 ![Pomodoro Screen](https://github.com/karapetianash/pomodoro-cli/blob/main/pomoFinalScreen.PNG "Pomodoro Screen")
 
 ### Usage:
-`pomo [flags]`
+    pomo [flags]
 
 ### Flags:
 
@@ -21,6 +21,11 @@ breaks are typically 5 and 15 minutes.
     -l, --long    duration  long break duration (default 15m0s)
     -p, --pomo    duration  pomodoro duration (default 25m0s)
     -s, --short   duration  short break duration (default 5m0s)
+
+### Build tags:
+    inmemory                enables inmemory repository
+    disable_notification    disables notifications
+    containers              smth about containers
 
 ### Remarks:
 * The application by default uses the `SQLite` repository which requires you to compile 
